@@ -23,6 +23,7 @@ public class ChildActivity extends AppCompatActivity {
 
     /* Field to store our TextView */
     private TextView mDisplayText;
+    private String textDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,13 @@ public class ChildActivity extends AppCompatActivity {
 
         // TODO (4) Create an if statement to check if this Intent has the extra we passed from MainActivity
 
-            // TODO (5) If the Intent contains the correct extra, retrieve the text
+        if (getIntent().hasExtra("startActivity")) {
+            textDisplay = getIntent().getStringExtra("startActivity");
+            mDisplayText.setText(textDisplay);
+        }
 
-            // TODO (6) If the Intent contains the correct extra, use it to set the TextView text
+        // TODO (5) If the Intent contains the correct extra, retrieve the text
+
+        // TODO (6) If the Intent contains the correct extra, use it to set the TextView text
     }
 }
